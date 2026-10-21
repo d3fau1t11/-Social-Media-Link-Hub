@@ -122,16 +122,17 @@ window.copyAddress = function() {
 const SITE_URL = 'https://mezmuredawit.netlify.app/';
 
 window.copyPageUrl = function() {
+  const successMsg = currentLang === 'am' ? 'ተቀድቷል!' : 'Copied!';
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(SITE_URL).then(() => {
-      showToast(currentLang === 'am' ? `የገጹ ሊንክ ተቀድቷል: ${SITE_URL}` : `Link copied: ${SITE_URL}`);
-    }).catch(() => fallbackCopy(SITE_URL));
+      showToast(successMsg);
+    }).catch(() => fallbackCopy(SITE_URL, successMsg));
   } else {
-    fallbackCopy(SITE_URL);
+    fallbackCopy(SITE_URL, successMsg);
   }
 };
 
-function fallbackCopy(text) {
+function fallbackCopy(text, customSuccessMsg) {
   const textArea = document.createElement('textarea');
   textArea.value = text;
   textArea.style.position = 'fixed';
@@ -141,7 +142,7 @@ function fallbackCopy(text) {
   textArea.select();
   try {
     document.execCommand('copy');
-    showToast(currentLang === 'am' ? `የገጹ ሊንክ ተቀድቷል: ${text}` : `Link copied: ${text}`);
+    showToast(customSuccessMsg || (currentLang === 'am' ? 'ተቀድቷል!' : 'Copied!'));
   } catch (err) {
     showToast(currentLang === 'am' ? 'መቅዳት አልተሳካም' : 'Could not copy');
   }
