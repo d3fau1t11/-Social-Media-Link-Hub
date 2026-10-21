@@ -119,14 +119,15 @@ window.copyAddress = function() {
   }
 };
 
+const SITE_URL = 'https://mezmuredawit.netlify.app/';
+
 window.copyPageUrl = function() {
-  const url = window.location.href;
   if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast(currentLang === 'am' ? 'የገጹ ሊንክ ተቀድቷል!' : 'Hub link copied!');
-    }).catch(() => fallbackCopy(url));
+    navigator.clipboard.writeText(SITE_URL).then(() => {
+      showToast(currentLang === 'am' ? `የገጹ ሊንክ ተቀድቷል: ${SITE_URL}` : `Link copied: ${SITE_URL}`);
+    }).catch(() => fallbackCopy(SITE_URL));
   } else {
-    fallbackCopy(url);
+    fallbackCopy(SITE_URL);
   }
 };
 
@@ -140,38 +141,21 @@ function fallbackCopy(text) {
   textArea.select();
   try {
     document.execCommand('copy');
-    showToast(currentLang === 'am' ? 'ተቀድቷል!' : 'Copied to clipboard!');
+    showToast(currentLang === 'am' ? `የገጹ ሊንክ ተቀድቷል: ${text}` : `Link copied: ${text}`);
   } catch (err) {
     showToast(currentLang === 'am' ? 'መቅዳት አልተሳካም' : 'Could not copy');
   }
   document.body.removeChild(textArea);
 }
 
-// 6. Native Share API & Fallback
+// 6. Direct Copy Web Link on Share Button Click
 function initShare() {
   const shareBtn = document.getElementById('shareBtn');
   if (!shareBtn) return;
 
-  shareBtn.addEventListener('click', async () => {
-    const title = currentLang === 'am' 
-      ? 'መዝሙረ ዳዊት መንፈሳዊ የዜማ ማሰልጠኛ ተቋም' 
-      : 'Mezmure Dawit Spiritual Chant Institute';
-    const text = currentLang === 'am'
-      ? 'ይፋዊ የማኅበራዊ ሚዲያ ገጾችና መረጃዎች ሊንክ ሀብ'
-      : 'Official Social Media Link Hub';
-    const url = window.location.href;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({ title, text, url });
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          copyPageUrl();
-        }
-      }
-    } else {
-      copyPageUrl();
-    }
+  shareBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    copyPageUrl();
   });
 }
 
