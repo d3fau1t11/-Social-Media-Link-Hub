@@ -291,6 +291,7 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  background-color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   z-index: 2;
@@ -546,6 +547,7 @@ body {
 .yt-accent { background: var(--yt-red); }
 .tt-accent { background: linear-gradient(180deg, var(--tt-cyan), var(--tt-pink)); }
 .tg-accent { background: var(--tg-blue); }
+.ig-accent { background: linear-gradient(180deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
 .link-icon {
   width: 54px;
@@ -581,6 +583,19 @@ body {
   color: #38bdf8;
 }
 
+.ig-icon {
+  background: linear-gradient(135deg, rgba(240, 148, 51, 0.18) 0%, rgba(220, 39, 67, 0.18) 50%, rgba(188, 24, 136, 0.18) 100%);
+  border: 1px solid rgba(225, 48, 108, 0.4);
+  color: #f472b6;
+}
+
+.link-card:hover .ig-icon {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.45);
+}
+
 .link-body {
   flex-grow: 1;
   min-width: 0;
@@ -612,6 +627,12 @@ body {
 .tg-badge {
   background: rgba(34, 158, 217, 0.18);
   color: #bae6fd;
+}
+
+.ig-badge {
+  background: linear-gradient(90deg, rgba(240, 148, 51, 0.22), rgba(220, 39, 67, 0.22));
+  color: #fbcfe8;
+  border: 1px solid rgba(225, 48, 108, 0.35);
 }
 
 .link-title {

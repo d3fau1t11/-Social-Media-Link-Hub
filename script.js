@@ -108,7 +108,7 @@ window.copyText = function(text, event) {
 };
 
 window.copyAddress = function() {
-  const mapsLink = "https://maps.app.goo.gl/cDcXcNBFJGvhCtky9";
+  const mapsLink = "https://maps.google.com/maps?q=8.868077,38.808289&ll=8.868077,38.808289&z=16";
 
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(mapsLink).then(() => {
@@ -168,7 +168,7 @@ function initQrCode() {
 
   const currentUrl = window.location.href.startsWith('http') 
     ? window.location.href 
-    : 'https://maps.app.goo.gl/cDcXcNBFJGvhCtky9';
+    : SITE_URL;
 
   qrBox.innerHTML = '';
   qrInstance = new QRCode(qrBox, {

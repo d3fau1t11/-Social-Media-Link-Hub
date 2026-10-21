@@ -11,11 +11,12 @@ Built using pure HTML5, Vanilla CSS, and JavaScript with deep emerald liturgical
 - **Direct Social Media Links**:
   - **YouTube Channel**: Direct link to [@mezmuredawit03](https://youtube.com/@mezmuredawit03?si=1tZO_rQD3D4CHWbE)
   - **TikTok Profile**: Direct link to [@mezmuredawit03](https://www.tiktok.com/@mezmuredawit03?_r=1&_t=ZS-9AdXZ3ILJYq)
+  - **Instagram Profile**: Direct link to [@mezmure_dawit_begena_kirar_](https://www.instagram.com/mezmure_dawit_begena_kirar_?cplk=YzJ3d3o1d3YweTZ5&utm_source=qr)
 - **Quick-Contact Phone Pills**:
   - `0946 40 15 41` (Click-to-call & one-click copy)
   - `0713 06 16 25` (Click-to-call & one-click copy)
 - **Verified Google Maps Location**:
-  - Location: [Google Maps](https://maps.app.goo.gl/cDcXcNBFJGvhCtky9)
+  - Location: [Google Maps](https://maps.google.com/maps?q=8.868077,38.808289&ll=8.868077,38.808289&z=16)
   - Direct navigation button & one-click copy link
 - **Interactive QR Code Generator**:
   - Instant scannable QR code for flyers, events, and mobile scanning
@@ -52,7 +53,8 @@ Built using pure HTML5, Vanilla CSS, and JavaScript with deep emerald liturgical
 ├── script.js        # QR generator, bilingual switcher, share API & modals
 ├── netlify.toml     # Netlify deployment and security header config
 ├── assets/
-│   ├── logo.jpg     # High-resolution spiritual institute emblem
-│   └── bg.jpg       # Ambient Ethiopian Orthodox church architectural background
+│   ├── logo.jpg               # High-resolution spiritual institute emblem
+│   ├── qr-with-new-seal.png   # Scannable QR code embedded with new official seal
+│   └── bg.jpg                 # Ambient Ethiopian Orthodox church architectural background
 └── README.md        # Documentation and deployment instructions
 ```
